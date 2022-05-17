@@ -85,4 +85,9 @@ public class UserController {
     public User getById(Long userId){
         return userService.getSafetyUser(userService.getById(userId));
     }
+
+    @GetMapping(value ="/delete")
+    public boolean delete(Long userId){
+        return userService.removeById(userId);
+    }
 }
