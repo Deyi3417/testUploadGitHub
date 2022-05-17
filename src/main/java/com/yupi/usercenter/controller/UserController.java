@@ -90,4 +90,12 @@ public class UserController {
     public boolean delete(Long userId){
         return userService.removeById(userId);
     }
+
+    @PostMapping(value ="/update")
+    public boolean update(Long userId){
+        User user = userService.getById(userId);
+        user.setUserAccount("GitHub更新");
+        return userService.saveOrUpdate(user);
+    }
+
 }
