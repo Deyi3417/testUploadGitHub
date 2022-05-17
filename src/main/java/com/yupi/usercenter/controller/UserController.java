@@ -80,4 +80,9 @@ public class UserController {
         }
         return true;
     }
+
+    @GetMapping(value ="/getById")
+    public User getById(Long userId){
+        return userService.getSafetyUser(userService.getById(userId));
+    }
 }
